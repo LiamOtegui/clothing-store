@@ -1,11 +1,12 @@
 import './App.css'
+import Home from './pages/Home'
 
 function App() {
 
   return (
     <>
-      <div className='text-[5rem] text-blue-500'>
-        <h1>Testing</h1>
+      <div className=''>
+        <Home />
       </div>
     </>
   )
