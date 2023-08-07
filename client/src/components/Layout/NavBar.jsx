@@ -6,7 +6,7 @@ const NavBar = () => {
         <>
             <div>
                 <div className='bg-black p-2 w-full'>
-                    <h3 className='flex justify-center text-white font-playfairDisplay text-[2rem] font-semibold leading-none'>Welcome</h3>
+                    <h3 className='flex justify-center text-white font-raleway text-[2rem] font-semibold leading-none'>Welcome</h3>
                 </div>
             </div>
 
@@ -16,7 +16,7 @@ const NavBar = () => {
                 </div>
 
                 <div className='flex flex-row items-center'>
-                    <button className='font-raleway text-black font-medium leading-none text-center mr-[1.3rem]'>Logout</button>
+                    <button className='font-raleway font-medium leading-none text-center mr-[1.3rem]'>Logout</button>
 
                     <div className='flex flex-row items-center'>
                         <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" viewBox="0 0 24 24" strokeWidth="2" stroke="#000" fill="none">
