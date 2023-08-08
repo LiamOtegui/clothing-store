@@ -10,7 +10,7 @@ const Slider = () => {
   console.log(slideIndex);
 
   return (
-    <div className=''>
+    <>
 
       <div>
         {
@@ -36,6 +36,7 @@ const Slider = () => {
           })
         }
       </div>
+      
       <div className='flex absolute bottom-12 left-[45%]'>
         {
           sliderData.map((dot, index) => {
@@ -51,6 +52,7 @@ const Slider = () => {
           })
         }
       </div>
+
       <div>
         <button className='absolute top-[50%] right-4 bg-white rounded-full p-2 hover:bg-green-300' onClick={() => dispatch(nextSlide(slideIndex + 1))}>
           <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-chevron-compact-right w-6 h-6" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
@@ -66,7 +68,7 @@ const Slider = () => {
         </button>
       </div>
 
-    </div>
+    </>
   )
 }
 

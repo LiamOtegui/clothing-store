@@ -1,0 +1,6 @@
+import NavBar from "./Layout/NavBar"
+import Slider from "./Slider/Slider"
+import Footer from "./Layout/Footer"
+import NavigateButtons from "./NavigateButtons/NavigateButtons"
+
+export { NavBar, Slider, Footer, NavigateButtons,  }
