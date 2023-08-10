@@ -7,7 +7,6 @@ const Slider = () => {
 
   const dispatch = useDispatch()
   const slideIndex = useSelector((state) => state.slider.value)
-  console.log(slideIndex);
 
   return (
     <>
