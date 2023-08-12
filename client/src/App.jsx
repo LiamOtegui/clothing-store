@@ -1,6 +1,6 @@
 import './App.css'
 import { Routes, Route } from 'react-router-dom'
-import { Home, FilteredProducts } from './pages'
+import { Home, FilteredProducts, Detail } from './pages'
 
 function App() {
 
@@ -10,6 +10,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/filteredProducts/:type' element={<FilteredProducts />} />
+          <Route path='/filteredProducts/:type/:id' element={<Detail />}/>
         </Routes>
       </div>
     </>

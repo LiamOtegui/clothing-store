@@ -1,5 +1,5 @@
-import Home from "./Home/Home";
-import FilteredProducts from "./FilteredProducts/FilteredProducts";
-import { ProductCard } from "../components";
+import Home from "./Home/Home"
+import FilteredProducts from "./FilteredProducts/FilteredProducts"
+import Detail from "./Detail/Detail"
 
-export { Home, FilteredProducts, ProductCard,  }
+export { Home, FilteredProducts, Detail,  }

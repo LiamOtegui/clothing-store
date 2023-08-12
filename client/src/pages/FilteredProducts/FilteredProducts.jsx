@@ -6,10 +6,8 @@ import { ProductCard } from '../../components'
 const FilteredProducts = () => {
 
   const products = useSelector((state) => state.products.filteredProducts)
-  console.log('products', products)
 
   const { type } = useParams()
-  console.log('type', type)
 
   return (
     <div>
@@ -23,7 +21,14 @@ const FilteredProducts = () => {
           {products.filter((product) => product.type === type).map((product, index) => {
             return (
               <div key={index}>
-                <ProductCard id={product.id} name={product.name} text={product.text} img={product.img} price={product.price} color={product.color} />
+                <ProductCard
+                  id={product.id}
+                  name={product.name}
+                  text={product.text}
+                  img={product.img}
+                  price={product.price}
+                  colors={product.colors}
+                />
               </div>
             )
           })}

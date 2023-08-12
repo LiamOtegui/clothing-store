@@ -6,28 +6,37 @@ import {
   CardFooter,
   Typography,
 } from '@material-tailwind/react';
+import { useDispatch } from 'react-redux';
+import { useParams, Link } from 'react-router-dom';
+import { productDetail } from '../../features/slices/productsSlice';
 
 const ProductCard = ({ id, name, img, text, price, colors }) => {
+
+  const dispatch = useDispatch()
+  const { type } = useParams()
+
   return (
-    <Card className="w-96">
-      <CardHeader color="blue" className="relative h-96">
-        <img src={img} alt="product" className='h-full w-full' />
-      </CardHeader>
-      <CardBody className='text-center'>
-        <Typography variant="h5" className="mb-2">{name}</Typography>
-        <Typography>{text}</Typography>
-      </CardBody>
-      <CardFooter divider className="flex items-center justify-between py-3">
-        <Typography variant="small">$ {price}</Typography>
-        <Typography variant="small" color="gray" className="flex gap-1">
-          {colors?.map((color, index) => {
-            return (
-              <i className="fas fa-map-marker-alt fa-sm mt-[3px] p-2 rounded-full mr-4" key={index} style={{ backgroundColor: color }}></i>
-            )
-          })}
-        </Typography>
-      </CardFooter>
-    </Card>
+    <Link to={`/filteredProducts/${type}/${id}`}>
+      <Card className="w-96" onClick={() => dispatch(productDetail(id))}>
+        <CardHeader color="blue" className="relative h-96">
+          <img src={img} alt="product" className='h-full w-full' />
+        </CardHeader>
+        <CardBody className='text-center'>
+          <Typography variant="h5" className="mb-2">{name}</Typography>
+          <Typography>{text}</Typography>
+        </CardBody>
+        <CardFooter divider className="flex items-center justify-between py-3">
+          <Typography variant="small">$ {price}</Typography>
+          <Typography variant="small" color="gray" className="flex gap-1">
+            {colors?.map((color, index) => {
+              return (
+                <i className="fa-solid fa-location-dot mt-[3px] rounded-full p-2 mr-4" key={index} style={{ backgroundColor: color }}></i>
+              )
+            })}
+          </Typography>
+        </CardFooter>
+      </Card>
+    </Link>
   );
 };
 
