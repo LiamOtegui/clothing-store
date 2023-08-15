@@ -10,7 +10,7 @@ import { useDispatch } from 'react-redux';
 import { useParams, Link } from 'react-router-dom';
 import { productDetail } from '../../features/slices/productsSlice';
 
-const ProductCard = ({ id, name, img, text, price, colors }) => {
+const ProductCard = ({ id, name, img, text, price, color }) => {
 
   const dispatch = useDispatch()
   const { type } = useParams()
@@ -28,7 +28,7 @@ const ProductCard = ({ id, name, img, text, price, colors }) => {
         <CardFooter divider className="flex items-center justify-between py-3">
           <Typography variant="small">$ {price}</Typography>
           <Typography variant="small" color="gray" className="flex gap-1">
-            {colors?.map((color, index) => {
+            {color?.map((color, index) => {
               return (
                 <i className="fa-solid fa-location-dot mt-[3px] rounded-full p-2 mr-4" key={index} style={{ backgroundColor: color }}></i>
               )
