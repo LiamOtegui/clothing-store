@@ -59,10 +59,10 @@ const Cart = ({ openModal, setOpen }) => {
                                                         Selected Color:
                                                         {
                                                             !whiteText
-                                                                ? <span className='ml-2 rounded-full px-2 font-raleway font-semibold' style={{ backgroundColor: item.color }}>
+                                                                ? <span className='ml-2 rounded-full px-2 py-1 font-raleway font-semibold' style={{ backgroundColor: item.color }}>
                                                                     {item.color}
                                                                 </span>
-                                                                : <span className='ml-2 rounded-full px-2 font-raleway text-white font-semibold' style={{ backgroundColor: item.color }}>
+                                                                : <span className='ml-2 rounded-full px-2 py-1 font-raleway text-white font-semibold' style={{ backgroundColor: item.color }}>
                                                                     {item.color}
                                                                 </span>
                                                         }
