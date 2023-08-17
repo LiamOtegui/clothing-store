@@ -12,10 +12,10 @@ const Footer = () => {
       </div>
       <div className='flex items-center justify-around pt-4'>
         <div>
-          <img className='h-20' src={logo} alt='logo' />
+          <p className='text-sm font-inter'>Clothing Store © {year} made by Liam Otegui</p>
         </div>
         <div>
-          <p className='text-sm font-inter'>Clothing Store © {year} made by Liam Otegui</p>
+          <img className='h-24' src={logo} alt='logo' />
         </div>
       </div>
     </div>

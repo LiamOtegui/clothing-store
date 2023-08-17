@@ -1,23 +1,20 @@
 import './App.css'
 import { Routes, Route } from 'react-router-dom'
-import { Home, FilteredProducts, Detail } from './pages'
+import { Home, FilteredProducts, Detail, Login } from './pages'
 import { useSelector } from 'react-redux'
 
 function App() {
 
-  // const cart = useSelector((state) => state.cart.cart)
-  // const totalAmount = useSelector((state) => state.cart.totalAmount)
-  // const totalPrice = useSelector((state) => state.cart.totalPrice)
-
-  // console.log('cart', cart);
-  // console.log('totalAmount', totalAmount);
-  // console.log('totalPrice', totalPrice);
+  const user = useSelector((state) => state.user.user)
+  const { authUser } = user
+  console.log('user', user);
+  console.log('authUser', authUser);
 
   return (
     <>
-      <div className=''>
+      <div className='App'>
         <Routes>
-          <Route path='/' element={<Home />} />
+          <Route path='/' element={authUser ? <Home /> : <Login />} />
           <Route path='/filteredProducts/:type' element={<FilteredProducts />} />
           <Route path='/filteredProducts/:type/:id' element={<Detail />}/>
         </Routes>

@@ -23,6 +23,10 @@ const ProductSectionItem = ({ id, img, name, text, size, price, color, totalPric
     <div>
       <Card className="w-96">
 
+        <Typography variant="h4" className="absolute rotate-45 z-10 right-[0.9rem] top-[2.7rem] text-[1.5rem] text-red-600 mb-2">
+          SALE%
+        </Typography>
+
         <CardHeader floated={false} className="h-96">
           <img src={img} alt={name} />
         </CardHeader>
@@ -36,8 +40,10 @@ const ProductSectionItem = ({ id, img, name, text, size, price, color, totalPric
           </Typography>
 
           <div className='flex justify-between items-center pt-4'>
-            <Typography color="gray" className="font-medium" textGradient>
-              Sizes left: {defaultSize}
+            <Typography color="gray" className="font-medium text-red-300" textGradient>
+              Sizes left: <span className='text-gray-500' >
+                    {defaultSize}
+                  </span>
             </Typography>
             {
               whiteText

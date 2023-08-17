@@ -1,7 +1,10 @@
 import React, { useState } from 'react'
 import logo from '../../assets/images/logo.png'
-import Cart from '../Cart/Cart';
-import { useSelector } from 'react-redux';
+import Cart from '../Cart/Cart'
+import { useSelector, useDispatch } from 'react-redux'
+import { Avatar } from "@material-tailwind/react"
+import { Tooltip, Button } from "@material-tailwind/react"
+import { logout } from '../../features/slices/authSlice'
 
 const NavBar = () => {
 
@@ -11,6 +14,10 @@ const NavBar = () => {
     };
 
     const totalAmount = useSelector((state) => state.cart.totalAmount)
+
+    const dispatch = useDispatch()
+    const user = useSelector((state) => state.user.user)
+    const { name, image } = user
 
     return (
         <>
@@ -22,18 +29,17 @@ const NavBar = () => {
 
             <div className='flex justify-around items-center'>
                 <div>
-                    <img className='w-[8.5rem]' src={logo} alt="store" />
+                    <img className='w-[8rem]' src={logo} alt="store" />
                 </div>
 
                 <div className='flex flex-row items-center text-lg'>
-                    <button className='font-raleway font-medium leading-none text-center mr-[3rem]'>Logout</button>
 
                     <div className='flex flex-row items-center'>
                         <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" viewBox="0 0 24 24" strokeWidth="2" stroke="#000" fill="none">
                             <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                             <path d="M19.5 12.572l-7.5 7.428l-7.5 -7.428a5 5 0 1 1 7.5 -6.566a5 5 0 1 1 7.5 6.572"></path>
                         </svg>
-                        <p className='font-raleway font-medium ml-[0.2rem] mr-[2.2rem]'>Wish List</p>
+                        <p className='font-raleway font-medium ml-[0.2rem] mr-[0.8rem]'>Wish List</p>
                     </div>
 
                     <div className='flex flex-row items-center cursor-pointer' onClick={handleOpen}>
@@ -52,6 +58,18 @@ const NavBar = () => {
                             {
                                 open && <Cart openModal={open} setOpen={setOpen} />
                             }
+                        </div>
+                    </div>
+                    <div className='flex mt-1'>
+                        <div className='flex flex-row items-center cursor-pointer pl-4 ml-[1.1rem]'>
+                            {image && <Avatar src={image} alt='avatar' size='sm' className='mr-2' />}
+                        </div>
+                        <div className='flex mt-[0.1rem]'>
+                            <Tooltip content='Sign out? Click!'>
+                                <p className='font-raleway text-m font-medium' onClick={() => dispatch(logout())}>
+                                    Hi {name.charAt(0).toUpperCase() + name.slice(1)}!
+                                </p>
+                            </Tooltip>
                         </div>
                     </div>
                 </div>
