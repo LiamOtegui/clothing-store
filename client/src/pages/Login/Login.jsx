@@ -10,6 +10,7 @@ import {
 import { useState } from "react";
 import { login } from "../../features/slices/authSlice";
 import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 
 import React from 'react'
 
@@ -30,6 +31,9 @@ const Login = () => {
 
     const dispatch = useDispatch()
 
+    const nameError = useSelector((state) => state.user.error.name)
+    const passwordError = useSelector((state) => state.user.error.password)
+
     return (
         <div className="grid grid-cols-1 items-center justify-items-center h-screen">
             <Card className="w-96">
@@ -45,9 +49,19 @@ const Login = () => {
                 </CardHeader>
 
                 <CardBody className="flex flex-col gap-4">
-                    <Input label="Username" size="lg" type="text" name="name" value={ values.name } onChange={onChange} />
-                    <Input label="Password" size="lg" type="password" name="password" value={ values.password } onChange={onChange} />
-                    <Input label="Image URL Address" size="lg" type="text" name="image" value={ values.image } onChange={onChange} />
+                    <Input label="Username" size="lg" type="text" name="name" value={values.name} onChange={onChange} />
+                    {nameError &&
+                        <Typography variant="paragraph" color="red" className="mt-2 text-center">
+                            {nameError}
+                        </Typography>
+                        }
+                    <Input label="Password" size="lg" type="password" name="password" value={values.password} onChange={onChange} />
+                    {passwordError &&
+                        <Typography variant="paragraph" color="red" className="mt-2 text-center">
+                            {passwordError}
+                        </Typography>
+                        }
+                    <Input label="Image URL Address" size="lg" type="text" name="image" value={values.image} onChange={onChange} />
                 </CardBody>
 
                 <CardFooter className="pt-0">

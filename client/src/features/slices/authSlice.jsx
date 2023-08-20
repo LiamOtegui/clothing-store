@@ -9,17 +9,33 @@ export const authSlice = createSlice({
             image: '',
             authUser: false,
         },
+        error: {
+            name: null,
+            password: null,
+        },
     },
     reducers: {
         login(state, action) {
             const userId = action.payload
-            const userValidation = /^[A-Za-z]{4,10}$/i.test(userId.name)
+            const usernameValidation = /^[A-Za-z]{4,10}$/i.test(userId.name)
             const passwordValidation = /^(?=.*[0-9])(?=.*[!@#$%^&*])[A-Za-z0-9!@#$%^&*]{4,10}$/i.test(userId.password)
 
             state.user = userId
-            if (!userValidation || !passwordValidation) {
+            if (!usernameValidation) {
                 state.user.authUser = false
+                state.error.name = 'Username must have 4 to 10 characters'
             } else {
+                state.error.name = null
+            }
+            
+            if (!passwordValidation) {
+                state.user.authUser = false
+                state.error.password = 'Password must have 4 to 10 characters, a number and a special character'
+            } else {
+                state.error.password = null
+            }
+            
+            if (usernameValidation && passwordValidation) {
                 state.user.authUser = true
                 const saveState = JSON.stringify(userId)
                 sessionStorage.setItem('authUser', saveState)

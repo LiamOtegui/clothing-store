@@ -7,8 +7,13 @@ function App() {
 
   const user = useSelector((state) => state.user.user)
   const { authUser } = user
-  console.log('user', user);
-  console.log('authUser', authUser);
+
+  // What is left to do?:
+  //   - Slider/Carrousel automatically moves to one side
+  //   - Button size for Shoes in FilteredProducts
+  //   - Wishlist
+  //   - Payment with Stripe.
+  //   - Button to go back to Home when I'm in the filtered products
 
   return (
     <>
