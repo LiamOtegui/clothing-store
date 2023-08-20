@@ -52,3 +52,8 @@ I wanted to improve my front-end development skills with all these technologies,
 <br>
 - Button to go back to the main page when the user is in the products list or in the detail.
 </details>
+
+![Captura de pantalla 2023-08-20 194528](https://github.com/LiamOtegui/clothing-store/assets/62453315/e670bb9f-76a0-416d-b170-333da85dec9f)
+![Captura de pantalla 2023-08-20 194553](https://github.com/LiamOtegui/clothing-store/assets/62453315/9bd5d615-c236-4189-b03d-11af0af7ddf0)
+![Captura de pantalla 2023-08-20 195129](https://github.com/LiamOtegui/clothing-store/assets/62453315/0feb7a13-46d2-48ef-82d4-afb7c139f164)
+![Captura de pantalla 2023-08-20 194723](https://github.com/LiamOtegui/clothing-store/assets/62453315/52316b68-4b7c-4828-ab75-287dbe5ad3fa)
