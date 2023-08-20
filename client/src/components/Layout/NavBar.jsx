@@ -34,13 +34,13 @@ const NavBar = () => {
 
                 <div className='flex flex-row items-center text-lg'>
 
-                    <div className='flex flex-row items-center'>
+                    {/* <div className='flex flex-row items-center'>
                         <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" viewBox="0 0 24 24" strokeWidth="2" stroke="#000" fill="none">
                             <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                             <path d="M19.5 12.572l-7.5 7.428l-7.5 -7.428a5 5 0 1 1 7.5 -6.566a5 5 0 1 1 7.5 6.572"></path>
                         </svg>
                         <p className='font-raleway font-medium ml-[0.2rem] mr-[0.8rem]'>Wish List</p>
-                    </div>
+                    </div> */}
 
                     <div className='flex flex-row items-center cursor-pointer' onClick={handleOpen}>
                         {

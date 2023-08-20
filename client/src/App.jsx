@@ -13,7 +13,7 @@ function App() {
   //   - Button size for Shoes in FilteredProducts
   //   - Wishlist
   //   - Payment with Stripe.
-  //   - Button to go back to Home when I'm in the filtered products
+  //   - Button to go back to Home when I'm in the FilteredProducts or in the Detail.
 
   return (
     <>

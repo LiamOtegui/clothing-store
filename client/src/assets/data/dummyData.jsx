@@ -123,7 +123,7 @@ export const storeData = [
     type: "T-Shirts",
     size: ["L", "XL"],
     color: ["Brown", "Gray", "Yellow"],
-    gender: "female",
+    gender: "male",
     price: 75,
     discount: "15% OFF",
   },

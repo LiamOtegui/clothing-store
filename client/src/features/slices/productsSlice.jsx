@@ -42,8 +42,7 @@ export const productsSlice = createSlice({
                     state.error = false
                     const saveState = JSON.stringify(gender)
                     sessionStorage.setItem("filteredData", saveState)
-                }
-                else {
+                } else {
                     state.error = true
                     state.filteredProducts = []
                 }
